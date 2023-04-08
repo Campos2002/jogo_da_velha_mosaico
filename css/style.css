@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Open Sans', Courier, monospace;
+
+
+    background-color: #421acd;
+    background-image: linear-gradient(270deg, #421acd 0%, #FC00FF 100%);
+
+}
+
+h2,
+h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+#tela-escura {
+    width: 100%;
+    height: 100%;
+    opacity: 0.90;
+    color: white;
+    display: none;
+    position: absolute;
+    background-color: black;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.grid {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, auto);
+}
+
+.celula {
+    width: 100px;
+    height: 100px;
+    border: 3px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 50px;
+}
+
+.celula:nth-child(1),
+.celula:nth-child(2),
+.celula:nth-child(3) {
+    border-top: none;
+}
+
+.celula:nth-child(1),
+.celula:nth-child(4),
+.celula:nth-child(7) {
+    border-left: none;
+}
+
+.celula:nth-child(7),
+.celula:nth-child(8),
+.celula:nth-child(9) {
+    border-bottom: none;
+}
+
+.celula:nth-child(3),
+.celula:nth-child(6),
+.celula:nth-child(9) {
+    border-right: none;
+}
