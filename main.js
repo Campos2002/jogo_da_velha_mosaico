@@ -16,21 +16,21 @@ const combinacoes = [
     [2, 4, 6],
 ];
 
-document.addEventListener("click", (event) => { //-------------------------------------------------
+document.addEventListener("click", (event) => {
     if (event.target.matches(".celula")) {
         jogar(event.target.id, jogador_X);
         setTimeout(() => bot(), 400);
     };
 });
 
-function jogar(id, turno) { //---------------------------------------------------------------------
+function jogar(id, turno) {
     const celula = document.getElementById(id);
     celula.textContent = turno;
     celula.classList.add(turno);
     checarVencedor(turno);
 };
 
-function bot() { //--------------------------------------------------------------------------------
+function bot() {
 
     const posicoesDisponiveis = [];
 
@@ -51,7 +51,7 @@ function bot() { //-------------------------------------------------------------
     };
 };
 
-function checarVencedor(turno) { //----------------------------------------------------------------
+function checarVencedor(turno) {
 
     const vencedor = combinacoes.some((comb) => {
         return comb.every((index) => {
@@ -66,7 +66,7 @@ function checarVencedor(turno) { //---------------------------------------------
     };
 };
 
-function checarEmpate() { //-----------------------------------------------------------------------
+function checarEmpate() {
     let x = 0;
     let o = 0;
 
@@ -83,7 +83,7 @@ function checarEmpate() { //----------------------------------------------------
     return x + o === 9 ? true : false;
 };
 
-function encerrarJogo(vencedor = null) { //--------------------------------------------------------
+function encerrarJogo(vencedor = null) {
     fimDeJogo = true;
 
     const telaEscura = document.getElementById("tela-escura");
